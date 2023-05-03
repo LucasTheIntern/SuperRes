@@ -10,7 +10,7 @@ There are many existing tutorials for doing this in Photoshop or similar program
 https://www.dpreview.com/articles/0727694641/here-s-how-to-pixel-shift-with-any-camera
 Photos captured by smartphones in particular can see significant improvements by this method due to the fact that their small sensors result in noisy images. 
 
-SuperRes3.py corrects for "large" (>1 pixel) shifts and rotations using the ORB (Oriented FAST and Rotated BRIEF) algorithm to align the images before upscaling and finding the median image. However, large shifts are not reccomended, as the alignment algorithm can only do so much. Photos with moving subjects or significant changes in camera position will result in "ghosting" (blurry/smeared edges), especially for objects close to the camera. 
+SuperRes.py corrects for "large" (>1 pixel) shifts and rotations using the ORB (Oriented FAST and Rotated BRIEF) algorithm to align the images before upscaling and finding the median image. However, large shifts are not reccomended, as the alignment algorithm can only do so much. Photos with moving subjects or significant changes in camera position will result in "ghosting" (blurry/smeared edges), especially for objects close to the camera. 
 
 You will need: 
     A folder multiple photos all taken from the same location.
