@@ -135,7 +135,7 @@ def GUI(folder_path):
 
 
 # %%
-folder_path = r'C:\Users\duncanla\Downloads\test_stack'
+folder_path = r'C:\Users\fiddl\Downloads\test_stack_2'
 superresolution(folder_path)
 GUI(folder_path)
 
