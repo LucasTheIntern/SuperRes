@@ -22,7 +22,7 @@ import os
 import cv2
 import numpy as np
 
-def superresolution(folder_path,sharp):
+def superresolution(folder_path):
     # Import all .jpg images in the folder
     images = []
     for filename in os.listdir(folder_path):
@@ -79,4 +79,61 @@ def superresolution(folder_path,sharp):
     # cv2.imwrite(os.path.join(folder_path, "SUPERRES_med_sharp.png"), sharpened_image)
     cv2.imwrite(os.path.join(folder_path, "SUPERRES_med.png"), median_image)
     cv2.imwrite(os.path.join(folder_path, "SUPERRES_sharp.png"), sharpened)
+
+
+
+# %%
+folder_path = r'C:\Users\fiddl\Downloads\test_stack_copy'
+superresolution(folder_path)
+
+
+# %%
+import cv2
+import numpy as np
+import os
+
+def superres_image(folder_path):
+    print("Loading images...")
+    images = []
+    for filename in os.listdir(folder_path):
+        img = cv2.imread(os.path.join(folder_path, filename))
+        if img is not None:
+            images.append(img)
+    if len(images) == 0:
+        print("No images found in the given folder")
+        return
+    print("Resizing images...")
+    h, w = images[0].shape[:2]
+    images_resized = [cv2.resize(img, (w*2, h*2), interpolation=cv2.INTER_NEAREST) for img in images]
+    print("Aligning images...")
+    images_aligned = []
+    warp_mode = cv2.MOTION_EUCLIDEAN
+    warp_matrix = np.eye(2, 3, dtype=np.float32)
+    number_of_iterations = 5000
+    termination_eps = 1e-10
+    criteria = (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, number_of_iterations, termination_eps)
+    for img in images_resized:
+        (cc, warp_matrix) = cv2.findTransformECC(cv2.cvtColor(images_resized[0],cv2.COLOR_BGR2GRAY), cv2.cvtColor(img,cv2.COLOR_BGR2GRAY),warp_matrix, warp_mode, criteria)
+        img_aligned = cv2.warpAffine(img, warp_matrix, (w*2,h*2), flags=cv2.INTER_LINEAR + cv2.WARP_INVERSE_MAP)
+        images_aligned.append(img_aligned)
+    print("Averaging aligned images...")
+    opacity = [1/i for i in range(1,len(images_aligned)+1)]
+    result = np.zeros_like(images_aligned[0], dtype=np.float32)
+    for i in range(len(images_aligned)):
+        result += images_aligned[i] * opacity[i]
+    result /= sum(opacity)
+    result = result.astype(np.uint8)
+    print("Sharpening result...")
+    result = cv2.GaussianBlur(result,(0,0), 2)
+    print("Saving superresolution image...")
+    cv2.imwrite(os.path.join(folder_path,'SUPERRES.jpg'), result)
+    print("Done!")
+
+
+
+
+#%%
+folder_path = r'C:\Users\fiddl\Downloads\test_stack_copy'
+superres_image(folder_path)
+
 # %%
