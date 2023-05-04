@@ -1,5 +1,5 @@
 # SuperRes
-Get superresolution from a stack of images using cv2 and PIL libraries in Python
+Get superresolution from a stack of images using cv2 and PIL libraries in Python.
 Some functions constructed with the assistance of Bing AI
 
 Pixel-shift photography is a method of obtaining images of far higher resolution than those of which the sensor is directly capable with low noise. 
