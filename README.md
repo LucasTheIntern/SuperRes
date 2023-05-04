@@ -1,6 +1,7 @@
 # SuperRes
 Get superresolution from a stack of images using cv2 and PIL libraries in Python.
-Some functions constructed with the assistance of Bing AI
+
+Some functions constructed with the assistance of Bing AI!
 
 Pixel-shift photography is a method of obtaining images of far higher resolution than those of which the sensor is directly capable with low noise. 
 In some high-end cameras, the sensor is subjected to a "jitter" that allows for multiple sub-pixel shifts in the image. The images acquired are then upscaled and composited in such a way as to increase the resolution of the final image.
