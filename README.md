@@ -13,9 +13,16 @@ Photos captured by smartphones in particular can see significant improvements by
 SuperRes.py corrects for "large" (>1 pixel) shifts and rotations using the ORB (Oriented FAST and Rotated BRIEF) algorithm to align the images before upscaling and finding the median image. However, large shifts are not reccomended, as the alignment algorithm can only do so much. Photos with moving subjects or significant changes in camera position will result in "ghosting" (blurry/smeared edges), especially for objects close to the camera. 
 
 You will need: 
-    A folder multiple photos all taken from the same location.
-    OR:
-    A .gif file containing the images that need to be processed.
+    A folder multiple photos all taken from the same location. File format: .jpg OR .png
+    Python 3 and editor
+    Python libraries:
+        os
+        cv2
+        numpy
+        tkinter
+        PIL
+
+.gif files are currently unsupported due to memory limitations... But there is a small portion of commented code for this, should you feel like working on that!
 
 Based on articles I've read (have not tested for myself), 20 photos is a rough practical limit for this method. Beyond this, little to no improvement may be seen, and the program's run-time only increases. 
 
