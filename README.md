@@ -28,3 +28,7 @@ Based on articles I've read (have not tested for myself), 20 photos is a rough p
 
 To use this script, supply a path (variable: folder_path at the top of the script) and run the code. The script will print statements to indicate progress. Once the median image has been obtained, a simple GUI window opens with sliders for controlling the brightness and sharpness of the image. If you desire to make these and other edits in a professional editor, you may simply close the GUI. The median image is saved to the same folder that was supplied by the user under the name "SUPERRES_med.png". If edited in the GUI, this image is also saved to that folder as "sharp_bright.png" once the "save" button has been pressed. 
 
+Shown below is a zoomed-in comparison between the first image in a sequence (the image to which all remaining images are aligned) and the resulting superresolution image. This is a small drawer handle that was halfway across the room in low lighting conditions. Note the reduction in noise and smoothing of edges. Some slight ghosting is also visible, due to one image being taken nearly a centimeter from the main grouping. Try to avoid this when capturing your own images! 
+
+
+
