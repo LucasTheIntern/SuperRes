@@ -30,5 +30,6 @@ To use this script, supply a path (variable: folder_path at the top of the scrip
 
 Shown below is a zoomed-in comparison between the first image in a sequence (the image to which all remaining images are aligned) and the resulting superresolution image. This is a small drawer handle that was halfway across the room in low lighting conditions. Note the reduction in noise and smoothing of edges. Some slight ghosting is also visible, due to one image being taken nearly a centimeter from the main grouping. Try to avoid this when capturing your own images! 
 
+![Comparison](https://user-images.githubusercontent.com/120214901/236077302-138bab06-cc43-4b65-a1b9-0a7040176002.png)
 
 
