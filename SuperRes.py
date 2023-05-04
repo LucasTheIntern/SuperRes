@@ -1,4 +1,9 @@
-#%% Superres.py
+#%% SuperRes.py
+"""
+Author: LucasTheIntern
+Date: 5/4/2023
+Purpose: Get a low-noise, superresolution photo from multiple lower quality photos.
+"""
 
 folder_path = r'path_to_folder_containing_noisy_photos!'
 
