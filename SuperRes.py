@@ -168,4 +168,29 @@ def GUI(folder_path):
 superresolution(folder_path)
 GUI(folder_path)
 
+
+
+# %% Experimental: further increase resolution via LapSRN model in cv2:
+# Requires OpenCV version 4.5.1+
+
+# def AI_super_resolve(folder_path, scale):
+#     # Set the path to the image
+#     image_path = folder_path + '\\SUPERRES_med.png'
+
+#     # Open the image
+#     image = Image.open(image_path)
+
+#     # Load the pre-trained LapSRN model
+#     sr = cv2.dnn_superres.DnnSuperResImpl_create()
+#     sr.readModel("LapSRN_x{}.pb".format(scale))
+#     sr.setModel("lapsrn", scale)
+
+#     # Upsample the image using the model
+#     result = sr.upsample(image)
+
+#     # Return the result
+#     return result
+
+# LapSRN = AI_super_resolve(folder_path, 8)
+
 # %%
